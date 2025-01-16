@@ -1,0 +1,9 @@
+name: mpath
+channels:
+  - conda-forge
+dependencies:
+  - pip=23.3.1
+  - python=3.10.13
+  - openslide=4.0.0
+  - pip:
+      - -r songsreq.txt
