@@ -1,0 +1,9 @@
+
+# Summarize the given reports using llama
+conda activate process-reports
+python summarize.py --model llama --reports data/TCGA_Reports.csv --out output/TCGA_Reports_Processed_llama.csv
+
+# Extract features from some reports
+# Note the mpath environment needs to be used
+conda activate mpath
+python scripts/extract-report-features.py --input_csv output/TCGA_Reports_Processed_llama.csv --output_h5ad output/sampled_corrections.h5ad  --repo_root $PWD --feature_label text_sum_bm
